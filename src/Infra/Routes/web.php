@@ -9,6 +9,8 @@ use Src\Application\Controllers\UserController;
 use Src\Application\Middlewares\AuthMiddleware;
 use Src\Infra\Repositories\UserMySqlRepository;
 
+Route::get('/', HomeController::class, 'page', [new UserService(new UserMySqlRepository)], [new AuthMiddleware]);
+
 Route::get('/auth/login', AuthController::class, 'loginPage', [new AuthService(new UserMySqlRepository, new UserService(new UserMySqlRepository))]);
 Route::post('/auth/login', AuthController::class, 'login', [new AuthService(new UserMySqlRepository, new UserService(new UserMySqlRepository))]);
 Route::get('/auth/logout', AuthController::class, 'logout', [new AuthService(new UserMySqlRepository, new UserService(new UserMySqlRepository))], [new AuthMiddleware]);
