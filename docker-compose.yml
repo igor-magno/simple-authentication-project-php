@@ -20,7 +20,7 @@ services:
     volumes:
       - .:/var/www/app
     ports:
-     - 80:80
+     - ${APP_PORT:-80}:80
     env_file:
       - .env
     networks:
