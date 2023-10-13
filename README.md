@@ -10,10 +10,10 @@ git clone https://github.com/igor-magno/simple-authentication-project-php.git
 
 * Acesse a pasta do projeto crie uma cópia do arquivo .env.example com o nome de .env altere as variáveis do arquivo .env se necessário.
 
-´´´
+```
 cd simple-authentication-project-php
 cp .env.example .env
-´´´
+```
 
 * Suba os serviços.
 
